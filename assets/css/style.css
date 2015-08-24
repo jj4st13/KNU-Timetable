@@ -304,6 +304,12 @@ li a:hover {
     color: #000;
 }
 
+/* 강의목록표 */
+
+.td_size {
+    width: 2000px;
+    max-width: 2000px;
+}
 
 /* SOCIAL BUTTONS */
 
