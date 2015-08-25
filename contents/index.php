@@ -5,6 +5,7 @@
     html상 js 변수사용: http://blog.naver.com/PostView.nhn?blogId=mr_chun&logNo=51962426
     jQuery를 이용한 iframe 크기 자동 조정 스크립트: http://tipsbox.tistory.com/entry/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-iframe-%EB%82%B4%EC%9A%A9%EC%97%90-%EB%94%B0%EB%9D%BC-%ED%81%AC%EA%B8%B0-%EC%9E%90%EB%8F%99-%EC%A1%B0%EC%A0%88
 -->
+
 <head>
     <meta charset="utf8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -89,14 +90,14 @@ if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['u
                                 </div>
                                 <hr />
                                 <h5><strong>한줄소개 : </strong></h5>
-<?php
+                                <?php
 if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['desc'];
 ?>
-                                <hr />
-                                <!-- 풀 프로파일은 아직 보류
+                                    <hr />
+                                    <!-- 풀 프로파일은 아직 보류
                                 <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp;
                                 -->
-<?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"../login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";
+                                    <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"../login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";
 ?>
                             </div>
                         </li>
@@ -117,11 +118,11 @@ if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['d
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.php?pageid=dashboard" <?php if(isset($_GET["pageid"]) && $_GET["pageid"] == "dashboard") echo "class=\"menu-top-active\""; if(!isset($_GET["pageid"])) echo "class=\"menu-top-active\""; ?>>Dashboard</a></li>
-                            <li><a href="index.php?pageid=table" <?php if(isset($_GET["pageid"]) && $_GET["pageid"] == "table") echo "class=\"menu-top-active\""; ?>>Time-table</a></li>
-                            <li><a href="index.php?pageid=board" <?php if(isset($_GET["pageid"]) && $_GET["pageid"] == "board") echo "class=\"menu-top-active\""; ?>>Free board</a></li>
-                            <li><a href="index.php?pageid=qna" <?php if(isset($_GET["pageid"]) && $_GET["pageid"] == "qna") echo "class=\"menu-top-active\""; ?>>QnA</a></li>
-                            <li><a type="button" <?php if(!isset($_SESSION['userid'])) echo "data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\""; else echo "href=\"../login/logout.php\""; ?>><?php if(!isset($_SESSION['userid'])) echo "login"; else echo "logout"?></a></li>
+                            <li><a href="index.php?pageid=dashboard" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="dashboard" ) echo "class=\"menu-top-active\""; if(!isset($_GET[ "pageid"])) echo "class=\"menu-top-active\""; ?>>Dashboard</a></li>
+                            <li><a href="index.php?pageid=table" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table" ) echo "class=\"menu-top-active\""; ?>>Time-table</a></li>
+                            <li><a href="index.php?pageid=board" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board" ) echo "class=\"menu-top-active\""; ?>>Free board</a></li>
+                            <li><a href="index.php?pageid=qna" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna" ) echo "class=\"menu-top-active\""; ?>>QnA</a></li>
+                            <li><a type="button" <?php if(!isset($_SESSION[ 'userid'])) echo "data-toggle=\"modal\ " href=\"#\ " data-target=\"#modal_login\""; else echo "href=\"../login/logout.php\""; ?>><?php if(!isset($_SESSION['userid'])) echo "login"; else echo "logout"?></a></li>
                         </ul>
                     </div>
                 </div>
@@ -133,17 +134,17 @@ if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['d
 
     <!-- IFRAME AUTO-RESIZER USING JQUERY-->
     <script>
-    function setIFrameHeight(obj){
-        if(obj.contentDocument){
-            obj.height = obj.contentDocument.body.offsetHeight + 40;
-        } else {
-            obj.height = obj.contentWindow.document.body.scrollHeight;
+        function setIFrameHeight(obj) {
+            if (obj.contentDocument) {
+                obj.height = obj.contentDocument.body.offsetHeight + 40;
+            } else {
+                obj.height = obj.contentWindow.document.body.scrollHeight;
+            }
         }
-    }
     </script>
 
     <!-- CONTENTS SECTION START-->
-    <iframe src=<?php if(isset($_GET["pageid"])) echo $_GET["pageid"]; else echo "dashboard"; ?>.php frameborder=0 width="100%" height="100%" scrolling=no onLoad="setIFrameHeight(this)">이 브라우저는 iframe을 지원하지 않습니다.</iframe>
+    <iframe src=<?php if(isset($_GET[ "pageid"])) echo $_GET[ "pageid"]; else echo "dashboard"; ?>.php frameborder=0 width="100%" height="100%" scrolling=no onLoad="setIFrameHeight(this)">이 브라우저는 iframe을 지원하지 않습니다.</iframe>
 
 
 
@@ -160,7 +161,8 @@ if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['d
             <div class="row">
                 <div class="col-md-12">
                     <strong>컴퓨터정보통신공학11 김남진&nbsp;&nbsp;Email: </strong>jj4st13@gmail.com&nbsp;&nbsp;|&nbsp;&nbsp;
-                    <strong>컴퓨터정보통신공학15 안정인&nbsp;&nbsp;Email: </strong>ji5489@gmail.com<br>
+                    <strong>컴퓨터정보통신공학15 안정인&nbsp;&nbsp;Email: </strong>ji5489@gmail.com
+                    <br>
                 </div>
 
             </div>
@@ -213,21 +215,21 @@ if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['d
                 </div>
 
                 <div class="modal-body">
-                <form method='post' action='../login/registerHandler.php'>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="name" name="username" class="form-control" id="username" placeholder="Username" />
-                    </div>
-                    <div class="form-group">
-                        <label for="user_id">user ID</label>
-                        <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="userpw" class="form-control" id="userpw" placeholder="Password" />
-                    </div>
-                    <button type="submit" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-log-in"></i> Register</button>
-                </form>
+                    <form method='post' action='../login/registerHandler.php'>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="name" name="username" class="form-control" id="username" placeholder="Username" />
+                        </div>
+                        <div class="form-group">
+                            <label for="user_id">user ID</label>
+                            <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="userpw" class="form-control" id="userpw" placeholder="Password" />
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-log-in"></i> Register</button>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
