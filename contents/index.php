@@ -73,32 +73,31 @@
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
-<?php
-session_start();
-if(!isset($_SESSION['username']) || !isset($_SESSION['userid'])) echo "Not Logged In";
-else echo $_SESSION['username'];
-?>
+                                            <?php
+                                            session_start();
+                                            if(!isset($_SESSION['username']) || !isset($_SESSION['userid'])) echo "Not Logged In";
+                                            else echo $_SESSION['username'];
+                                            ?>
                                         </h4>
 
                                         <h5>
-<?php
-if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['userid'];
-?>
+                                            <?php
+                                            if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['userid'];
+                                            ?>
                                         </h5>
 
                                     </div>
                                 </div>
-                                <hr />
-                                <h5><strong>한줄소개 : </strong></h5>
-                                <?php
-if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['desc'];
-?>
-                                    <hr />
+                                <hr/>
+                                    <h5><strong>한줄소개 : </strong></h5>
+                                    <?php
+                                    if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['desc'];
+                                    ?>
+                                <hr/>
                                     <!-- 풀 프로파일은 아직 보류
                                 <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp;
                                 -->
-                                    <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"../login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";
-?>
+                                <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"../login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
                             </div>
                         </li>
                     </ul>
