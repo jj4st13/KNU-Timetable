@@ -7,16 +7,16 @@ ini_set("display_errors", 1);
 
     include_once "./lib/connect.php";       //db연결
     include_once "./contents/upper.php";     //상단
-    if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="dashboard" )
+    if(isset($_GET[ "pageid"]=="dashboard" || $_GET[ "pageid"]))
             include_once "./contents/dashboard.php";
 
-    else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table" )
+    else if(isset($_GET[ "pageid"]=="table" ))
             include_once "./contents/table.php";
 
-    else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board" )
+    else if(isset($_GET[ "pageid"]=="board" ))
             include_once "./contents/board.php";
 
-    else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna" )
+    else if(isset(&& $_GET[ "pageid"]=="qna" ))
             include_once "./contents/qna.php";
 ?>
 
