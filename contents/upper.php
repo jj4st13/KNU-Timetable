@@ -10,11 +10,11 @@
     <title>KNU 시간표 작성기</title>
 
     <!-- 부트스트랩 -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <!-- FONT AWESOME ICONS  -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets/css/font-awesome.css" rel="stylesheet" />
     <!-- CUSTOM STYLE  -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="../assets/css/style.css" rel="stylesheet" />
 
     <!-- IE8 에서 HTML5 요소와 미디어 쿼리를 위한 HTML5 shim 와 Respond.js -->
     <!-- WARNING: Respond.js 는 당신이 file:// 을 통해 페이지를 볼 때는 동작하지 않습니다. -->
@@ -49,8 +49,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">
-                    <img src="assets/img/logo.png" />
+                <a class="navbar-brand" href="../index.php">
+                    <img src="../assets/img/logo.png" />
                 </a>
 
             </div>
@@ -65,7 +65,7 @@
                             <div class="dropdown-menu dropdown-settings">
                                 <div class="media">
                                     <a class="media-left" href="#">
-                                        <img src="assets/img/64-64.jpg" alt="" class="img-rounded" />
+                                        <img src="../assets/img/64-64.jpg" alt="" class="img-rounded" />
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
@@ -92,7 +92,7 @@
                                     <!-- 풀 프로파일은 아직 보류
                                 <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp;
                                 -->
-                                <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
+                                <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"../login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
                             </div>
                         </li>
                     </ul>

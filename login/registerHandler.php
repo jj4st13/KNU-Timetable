@@ -26,14 +26,13 @@
 	mysql_select_db($dbname, $sqlConn);
 
 	//아이디와 비밀번호의 값을 POST방식으로 받는 것
-    //'$num', '$id', '$pw', '$token', '$name', '$age', '$birthdate', '$grade', '$comment'
-    $num = $_POST['usernum'];
+    //$id', '$pw', '$token', '$name', 'email', $grade', 'major', $comment'
 	$id = $_POST['userid'];
 	$pw = $_POST['userpw'];
 	$name = $_POST['username'];
-	$age = $_POST['userage'];
-	$birthdate = $_POST['userbirth'];
+    $email = $_POST['email'];
 	$grade = $_POST['usergrade'];
+    $major = $_POST['major'];
 	$comment = $_POST['usercomment'];
 
 
@@ -45,7 +44,8 @@
 	//아이디가 있다면
 	if($getID['id']) {
         $result = "ID EXISTS!";
-	} else { // ID가 존재하지 않는 경우
+	}
+    else { // ID가 존재하지 않는 경우
 
 		//64자리의 무작위 문자열을 생성한다.
 		//이 64자리의 임의의 수가 바로 토큰으로 로그인 대조에 사용할 키 값.
@@ -54,7 +54,7 @@
             $token = $key[rand(0,63)];
 
 		//아이디와 비밀번호 및 기타 정보들을 DB에 등록한다.
-		$setDATA = "INSERT INTO $dbtable (num, id, password, token, name, age, birthdate, grade, comment) VALUES ('$num', '$id', '$pw', '$token', '$name', '$age', '$birthdate', '$grade', '$comment')";
+		$setDATA = "INSERT INTO $dbtable (id, password, token, name, email, grade, major, comment) VALUES ('$id', '$pw', '$token', '$name', '$email', '$grade', '$major', $comment')";
         $setDATA = mysql_query($setDATA);
         echo "result: " . $setDATA . "\n";
 
