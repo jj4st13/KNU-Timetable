@@ -63,7 +63,7 @@
         $_SESSION['username'] = $name;
 
         //홈 페이지로 리디렉트 후 종료한다.
-        echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+        echo "<meta http-equiv='refresh' content='0;url=../index.php'>";
 
 	}
 

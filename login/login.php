@@ -63,7 +63,7 @@
             $_SESSION['username'] = mysql_result(mysql_query("SELECT name FROM usertest1 WHERE id='$id'"),0);
 
             //홈 페이지로 리디렉트 후 종료한다.
-            echo "<meta http-equiv='refresh' content='0;url=index.php'>";
+            echo "<meta http-equiv='refresh' content='0;url=../index.php'>";
 
 			return 0;
 
