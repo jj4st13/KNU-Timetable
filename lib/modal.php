@@ -62,17 +62,19 @@
                         <input type="password" name="userpw" class="form-control" id="userpw" placeholder="예: 4~20자리의 숫자,영대/소문자 및 특수기호" />
                     </div>
                     <div class="form-group">
-                        <label for="user_num">학번</label>
-                        <input type="number" name="usernum" class="form-control" id="usergrade" placeholder="예: 201500000" />
+                        <label for="password">다시 입력</label>
+                        <input type="password" name="userpw2" class="form-control" id="userpw2" placeholder="비밀번호 다시 입력" />
                     </div>
-                    <div class="form-group">
-                        <label for="user_age">나이</label>
-                        <input type="number" name="userage" class="form-control" id="userage" placeholder="예: 20" />
+                    <div class="input-group form-group">
+                        <div class="input-group-addon">학번</div>
+                        <select class="form-control col-xs-2" name="stdtnum" id="stdtnum">
+                            <?php for($i = 6; $i < 16; $i++){
+                                if($i<10) echo "<option value=0".$i."".((date("y")==$i)?' selected="seleced"':"").">0".$i."</option>";
+                                else echo "<option value=".$i."".((date("y")==$i)?' selected="seleced"':"").">".$i."</option>";
+                            }?>
+                        </select>
                     </div>
-                    <div class="form-group">
-                        <label for="user_birth">생일</label>
-                        <input type="date" name="userbirth" class="form-control" id="userbirth" placeholder="1996-01-01" />
-                    </div>
+
                     <div class="form-group">
                         <label for="user_id">학년</label>
                         <input type="number" name="usergrade" class="form-control" id="usergrade" placeholder="예: 3" />
@@ -81,11 +83,11 @@
                         <label for="user_id">자기소개</label>
                         <input type="text" name="usercomment" class="form-control" id="usercomment" placeholder="예: 안녕하세요. 홍길동입니다." />
                     </div>
-                    <button type="submit" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-log-in"></i> 가입</button>
+                    <button type="submit" class="btn btn-warning btn-block"><i class="glyphicon glyphicon-log-in"></i> sign up</button>
                 </form>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Close</button>
             </div>
         </div>
     </div>
