@@ -7,17 +7,15 @@ ini_set("display_errors", 1);
 
     include_once "./lib/connect.php";       //db연결
     include_once "./contents/upper.php";     //상단
-    if(isset($_GET[ "pageid"]=="dashboard" || $_GET[ "pageid"]))
-            include_once "./contents/dashboard.php";
-
+    if(isset($_GET[ "pageid"]=="dashboard") || !isset($_GET[ "pageid"])
+        include_once "./contents/dashboard.php";
     else if(isset($_GET[ "pageid"]=="table" ))
-            include_once "./contents/table.php";
-
+        include_once "./contents/table.php";
     else if(isset($_GET[ "pageid"]=="board" ))
-            include_once "./contents/board.php";
+        include_once "./contents/board.php";
 
     else if(isset(&& $_GET[ "pageid"]=="qna" ))
-            include_once "./contents/qna.php";
+        include_once "./contents/qna.php";
 ?>
 
 
@@ -41,6 +39,6 @@ ini_set("display_errors", 1);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
     <script src="./assets/js/bootstrap.min.js"></script>
-</body>
+    </body>
 
-</html>
+    </html>
