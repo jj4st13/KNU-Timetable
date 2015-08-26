@@ -9,7 +9,7 @@
             </div>
 
             <div class="modal-body">
-                <form method='post' action='../login/login.php'>
+                <form method='post' action='login/login.php'>
                     <div class="form-group">
                         <label for="user_id">user ID</label>
                         <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
@@ -48,7 +48,7 @@
             </div>
 
             <div class="modal-body">
-                <form method='post' action='../login/registerHandler.php'>
+                <form method='post' action='login/registerHandler.php'>
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="name" name="username" class="form-control" id="username" placeholder="Username" />

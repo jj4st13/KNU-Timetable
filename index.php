@@ -6,7 +6,7 @@ ini_set("display_errors", 1);
     }
 
     include_once "./lib/connect.php";       //db연결
-    include_once "./contents/upper.php";     //상단
+    include_once "./contents/upper.php";    //상단
     if(!isset($_GET[ "pageid"]) || $_GET[ "pageid"]=="dashboard")
         include_once "./contents/dashboard.php";
     else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table")
@@ -15,8 +15,8 @@ ini_set("display_errors", 1);
         include_once "./contents/board.php";
     else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna")
         include_once "./contents/qna.php";
+    include_once "./lib/modal.php";         // 모달 로그인
 ?>
-
 
     <!-- FOOTER SECTION START-->
     <footer>
