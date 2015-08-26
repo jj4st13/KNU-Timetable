@@ -50,7 +50,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">
-                    <img src="../assets/img/logo.png" />
+                    <img src="assets/img/logo.png" />
                 </a>
 
             </div>
@@ -65,7 +65,7 @@
                             <div class="dropdown-menu dropdown-settings">
                                 <div class="media">
                                     <a class="media-left" href="#">
-                                        <img src="../assets/img/64-64.jpg" alt="" class="img-rounded" />
+                                        <img src="assets/img/64-64.jpg" alt="" class="img-rounded" />
                                     </a>
                                     <div class="media-body">
                                         <h4 class="media-heading">
@@ -92,7 +92,7 @@
                                     <!-- 풀 프로파일은 아직 보류
                                 <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp;
                                 -->
-                                <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"../login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
+                                <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
                             </div>
                         </li>
                     </ul>
