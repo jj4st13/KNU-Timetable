@@ -4,7 +4,7 @@
 PHP 배열 사용: https://opentutorials.org/course/779/4930
 Grid Templete for Bootstrap: http://getbootstrap.com/examples/grid/
 테이블 크기 조절: http://stackoverflow.com/questions/4457506/set-the-table-column-width-constant-regardless-of-the-amount-of-text-in-its-cell
-
+PDO를 이용한 MySQL 접속: http://code.tutsplus.com/tutorials/php-database-access-are-you-doing-it-correctly--net-25338
 -->
 <head>
     <meta charset="utf8">
@@ -73,6 +73,7 @@ Grid Templete for Bootstrap: http://getbootstrap.com/examples/grid/
     $datatype = array('type', 'field', 'code', 'classcode', 'lectureName', 'runTime', 'targetDepart', 'targetNum', 'runUniv', 'belongDepart', 'profNum', 'profName', 'profType', 'lecRoom', 'note', 'isEng');
     $dtypenum = 15;
 
+    // mysql_connect() 이용
     //로그인 정의
     $mysql_host = "localhost";
     $mysql_login = "loginuser";
@@ -106,6 +107,33 @@ Grid Templete for Bootstrap: http://getbootstrap.com/examples/grid/
         $num++;
     }
 
+    /* PDO 이용 구현 단계: http://code.tutsplus.com/tutorials/php-database-access-are-you-doing-it-correctly--net-25338
+
+    // (이미 index.php에서 connect.php를 가져옴)
+
+    //데이터 가져오기 및 표현
+
+    $num=1;
+    while($num <= $datanum) {
+
+        $mysql_tb = "knu_lecture_data";
+        $getData = $conn->prepare('SELECT * FROM ' . $mysql_tb . ' WHERE num = ' . $num);
+        $getData->execute();
+
+        $type = 0;
+        echo $tab1 . $tag1;
+
+        while($type < $dtypenum) {
+            $getData[$datatype[$type]] = $getData->fetchAll();
+            echo $getData[$datatype[$type]] . $tag2;
+            $type++;
+        }
+
+        echo $getData[$datatype[$type]] . $tag3;
+
+        $num++;
+    }
+    */
 
 ?>
                                 </tbody>
