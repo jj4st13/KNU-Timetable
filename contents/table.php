@@ -58,54 +58,6 @@ Grid Templete for Bootstrap: http://getbootstrap.com/examples/grid/
                                 </thead>
                                 <tbody>
 
-                                <!--
-
-                                root@localhost [db1]> DESC knu_lecture_data;
-                                +--------------+-------------+------+-----+---------+-------+
-                                | Field        | Type        | Null | Key | Default | Extra |
-                                +--------------+-------------+------+-----+---------+-------+
-                                | num          | int(11)     | YES  |     | NULL    |       |
-                                | type         | varchar(10) | YES  |     | NULL    |       |
-                                | field        | varchar(50) | YES  |     | NULL    |       |
-                                | code         | int(11)     | YES  |     | NULL    |       |
-                                | classcode    | int(11)     | YES  |     | NULL    |       |
-                                | lecturename  | text        | YES  |     | NULL    |       |
-                                | runtime      | varchar(10) | YES  |     | NULL    |       |
-                                | targetDepart | text        | YES  |     | NULL    |       |
-                                | targetNum    | int(11)     | YES  |     | NULL    |       |
-                                | runUniv      | text        | YES  |     | NULL    |       |
-                                | belongDepart | text        | YES  |     | NULL    |       |
-                                | profNum      | int(11)     | YES  |     | NULL    |       |
-                                | profName     | varchar(10) | YES  |     | NULL    |       |
-                                | profType     | varchar(10) | YES  |     | NULL    |       |
-                                | lecRoom      | text        | YES  |     | NULL    |       |
-                                | note         | text        | YES  |     | NULL    |       |
-                                | isEng        | varchar(10) | YES  |     | NULL    |       |
-                                +--------------+-------------+------+-----+---------+-------+
-
-                                -->
-
-                                    <!--
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
-                                        <td>@twitter</td>
-                                    </tr>
-                                    -->
-
 <?php
 
     //HTML 태그 정의
