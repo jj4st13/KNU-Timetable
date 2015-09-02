@@ -1,11 +1,12 @@
-<!--
+<?php
+ /*
   채팅프로그램: uchat
   uchat http://http://uchat.co.kr/
   id = knu
   password = namjin13
   관라지가 나중에 알아서 수정
-  -->
-
+*/
+?>
 <div class="content-wrapper">
     <div class="container">
         <div class="row">

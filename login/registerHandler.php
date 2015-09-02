@@ -5,22 +5,22 @@
 -->
 
 <?php
-    //user_id와 user_pw가 정의 되어있는지 확인하는 부분
-    if(!isset($_POST['userid']) || !isset($_POST['userpw'])) { // POST의 name을 가져옴.
-        echo "제대로 정의되지 않았습니다.";
+    require_once "../lib/regist_check.php";
+    //모든 정보가 재대로 정의 되어 있는 지 확인!
+    if(!check_regist_form($_POST['userid'],$_POST['username'],$_POST['userpw'],$_POST['userpw2'],$_POST['email'])){
+    ?>
+        <script>
+            alert("올바른 정보가 입력되지 않았습니다.");
+        </script>
+    <?php
         exit;
     }
+
+    require_once="../lib/connect";  //DB정보
 
 	//세션을 사용하기 위해 선언하는 부분
 	session_cache_limiter('');
 	session_start();
-
-	//데이터베이스에 접근하기 위한 부분
-	$dbid = "loginuser";
-	$dbpass = "loginpw";
-	$dbname ="db1";
-	$dbhost = "localhost";
-    $dbtable = "usertest1";
 
 	$sqlConn = mysql_connect($dbhost, $dbid, $dbpass);
 	mysql_select_db($dbname, $sqlConn);
@@ -75,6 +75,4 @@
         //홈 페이지로 리디렉트 후 종료한다.
         echo "<meta http-equiv='refresh' content='0;url=../index.php'>";
 	}
-
-    return 0;
 ?>

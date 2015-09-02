@@ -6,16 +6,16 @@ ini_set("display_errors", 1);
     }
 
     //include_once "./lib/connect.php";       //db연결
-    include_once "./contents/upper.php";    //상단
+    require_once "./contents/upper.php";    //상단
     if(!isset($_GET[ "pageid"]) || $_GET[ "pageid"]=="dashboard")
-        include_once "./contents/dashboard.php";
+        require_once "./contents/dashboard.php";
     else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table")
-        include_once "./contents/table.php";
+        require_once "./contents/table.php";
     else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board")
-        include_once "./contents/board.php";
+        require_once "./contents/board.php";
     else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna")
-        include_once "./contents/qna.php";
-    include_once "./lib/modal.php";         // 모달 로그인
+        require_once "./contents/qna.php";
+    require_once "./lib/modal.php";         // 모달 로그인
 ?>
 
     <!-- FOOTER SECTION START-->
@@ -39,5 +39,4 @@ ini_set("display_errors", 1);
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
     <script src="./assets/js/bootstrap.min.js"></script>
     </body>
-
-    </html>
+</html>
