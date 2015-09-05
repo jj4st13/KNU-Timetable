@@ -82,6 +82,12 @@
                             <div class="input-group-addon">학&nbsp; &nbsp; 과</div>
                             <select class="form-control" name="major" id="major">
                                 <?php
+require_once "../lib/connect.php";
+//DB객체 생성 및 접속
+$db = new DBC;
+$db->DBI();
+
+$db->DBO();
                                     //DB에서 학과만 뽑아내야함
                                     //길이는 알아서 늘어남
                                 ?>

@@ -6,11 +6,11 @@
 
 <?php
     require_once "../lib/regist_check.php";
-    require_once="../lib/connect";  //DB정보
-    echo "<script>alert('회원가입 폼을 재대로 정확히 채워주세요.');history.back();</script>";
+    require_once "../lib/connect.php";
+
     //모든 정보가 재대로 정의 되어 있는 지 확인!
-    if(check_regist_form($_POST['userid'],$_POST['username'],$_POST['userpw'],$_POST['userpw2'],$_POST['email'])==false){
-        echo "<script>alert('회원가입 폼을 재대로 정확히 채워주세요.');history.back();</script>";
+    if(!check_regist_form($_POST['userid'], $_POST['userpw'], $_POST['userpw2'], $_POST['username'], $_POST['email']), $_POST['usercomment']){
+        echo "<script>alert('회원가입 폼을 정확히 채워주세요.');history.back();</script>";
         exit;
     }
 
@@ -33,8 +33,6 @@
         $major = $_POST['major'];
         $comment = $_POST['usercomment'];
 
-
-
         //입력받은 아이디가 존재하는지 체크하기 위해 데이터베이스에서 id를 가져옴
         $db->query = "SELECT id FROM users WHERE id='$id'";
         $db->DBQ();
@@ -51,30 +49,32 @@
                 $token .= $key[rand(0,63)];
 
             //아이디와 비밀번호 및 기타 정보들을 DB에 등록한다.
-            $db->query = "INSERT INTO $dbtable (id, password, token, name, email, grade, major, comment) VALUES ('$id', '$pw', '$token', '$name', '$email', '$grade', '$major', $comment')";
+            $db->query = "SELECT INTO users (id, password, token, name, email, grade, major, comment) VALUE ('$id', '$pw', '$token', '$name', '$email', '$grade', '$major', $comment')";
             $db->DBQ();
 
             if(!$db->result)    //회원가입 실패시
                 echo "<script>alert('회원가입에 실패하였습니다.');history.back();</script>";
-            else    //회원가입 성공시
+
+            else{    //회원가입 성공시
                 echo "<script>alert('회원가입 되었습니다. 메인화면으로 이동합니다.');</script>";
+                //세션에 토큰 즉 키 값을 등록한다.
+                $_SESSION['token'] = $token;
 
-            //세션에 토큰 즉 키 값을 등록한다.
-            $_SESSION['token'] = $token;
-
-            //이름 등 각종 정보를 세션에 저장한다.
-            //$_SESSION['desc'] = $comment;
-            //$_SESSION['userid'] = $id;
-            //$_SESSION['username'] = $name;
+                //이름 등 각종 정보를 세션에 저장한다.
+                $_SESSION['userid'] = $id;
+                //$_SESSION['desc'] = $comment;
+                //$_SESSION['username'] = $name;
+            }
         }
-
         //이미 가입한 회원이 존재할 때때
-        else if(($id!="" || $pass!="") && $data[0]!=1){     //회원 정보가 없을 때
-            echo "<script>alert('아이디와 비밀번호가 맞지 않습니다.');</script>";
+        else{
+            echo "<script>alert(''$id'로 가입한 회원이 존재합니다.');</script>";
+            echo "<script>history.back();</script>";
+            exit;
         }
-
         $db->DBO(); //db접속 종료
-        echo "<meta http-equiv='refresh' content='0;url=../index.php'>";
-        exit;
     }
+
+    echo "<meta http-equiv='refresh' content='0;url=../index.php'>";
+    exit;
 ?>
