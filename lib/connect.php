@@ -1,19 +1,31 @@
 <?php
-    //use pdo
-    //about pdo and mysqli
+    class DBC
+    {
+        public $db;
+        public $query;
+        public $result;
 
-    $servername = "localhost";
-    $dbname = "db1";
-    $username = "loginuser";         //mysql 관리자 ID
-    $password = "loginpw";     //mysql 관리자 Password
+        public function DBI()   //DB연결
+        {
+            $this->db = new mysqli('localhost', 'root', 'namjin13', 'timetable'); //host, id, pw, database 순서입니다.
+            $this->db->query('SET NAMES UTF8');
+            if(mysqli_connect_errno())
+            {
+                header("Content-Type: text/html; charset=UTF-8");
+                echo "데이터 베이스 연동에 실패했습니다.";
+                exit;
+            }
+        }
 
-    try {
-        //conect Database
-        $conn = new PDO("mysql:host=$servername; dbname=$dbname", $username, $password);
-        // set the PDO error mode to exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    }
-    catch(PDOException $e){
-        echo $e; //보안상 취약! MySQL비밀번호 출력 가능
+        public function DBQ()   //쿼리 실행
+        {
+            $this->result = $this->db->query($this->query);
+        }
+
+        public function DBO()   //접속 종료
+        {
+            $this->result->free;
+            $this->db->close();
+        }
     }
 ?>

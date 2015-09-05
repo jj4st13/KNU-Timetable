@@ -1,7 +1,7 @@
 <?php
     //전체 regist_form 검사
     function check_regist_form($id, $name, $passwd, $passwd2, $email){
-        if(check_id($id) && check_name($name) && check_passwd($passwd) && check_retype_passwd($passwd, $passwd2) && check_email($email))
+        if(check_id($id) && check_name($name) && check_passwd($passwd) && check_email($email))
             return true;
         else
             return false;

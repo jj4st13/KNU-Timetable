@@ -47,15 +47,11 @@
                 <h4 class="modal-title" id="myModalLabel">회원가입</h4>
             </div>
 
-            <div class="modal-body">
-                <form method='post' action='../login/registerHandler.php'>
+            <form method='post' action='../login/registerHandler.php'>
+                <div class="modal-body">
                     <div class="form-group">
                         <label for="user_id">아이디</label>
                         <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
-                    </div>
-                    <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" name="username" class="form-control" id="username" placeholder="예: 홍길동" />
                     </div>
                     <div class="form-group">
                         <label for="password">비밀번호</label>
@@ -64,6 +60,10 @@
                     <div class="form-group">
                         <label for="password">다시 입력</label>
                         <input type="password" name="userpw2" class="form-control" id="userpw2" placeholder="비밀번호 다시 입력" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">이름</label>
+                        <input type="text" name="username" class="form-control" id="username" placeholder="예: 홍길동" />
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -92,11 +92,11 @@
                         <label for="user_id">자기소개</label>
                         <textarea class="form-control" name="usercomment" id="usercomment" rows="2" placeholder="예: 안녕하세요. 홍길동입니다."></textarea>
                     </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-log-in"></i> sign up</button>
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Close</button>
-            </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-warning"><i class="glyphicon glyphicon-log-in"></i> sign up</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Close</button>
+                </div>
             </form>
         </div>
     </div>
