@@ -48,7 +48,7 @@
             //이 64자리의 임의의 수가 바로 토큰으로 로그인 대조에 사용할 키 값.
             $key = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^/';
             for($i=0;$i<=63;$i++)
-                $token = $key[rand(0,63)];
+                $token .= $key[rand(0,63)];
 
             //아이디와 비밀번호 및 기타 정보들을 DB에 등록한다.
             $db->query = "INSERT INTO $dbtable (id, password, token, name, email, grade, major, comment) VALUES ('$id', '$pw', '$token', '$name', '$email', '$grade', '$major', $comment')";

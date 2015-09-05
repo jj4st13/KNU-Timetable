@@ -18,7 +18,6 @@
     $db->DBI();
 
 	//세션을 사용하기 위해 선언하는 부분
-	session_cache_limiter('');
 	session_start();
 
 	//아이디와 비밀번호의 값을 POST방식으로 받는 것
@@ -38,7 +37,7 @@
 		//이 64자리의 임의의 수가 바로 토큰으로 로그인 대조에 사용할 키 값.
 		$key = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^/';
         for($i=0;$i<=63;$i++)
-            $token = $key[rand(0,63)];
+            $token .= $key[rand(0,63)];
 
         //방금 만든 토큰을 데이터베이스에 업데이트한다.
         //입력받은 아이디가 있는 위치에 업데이트.
