@@ -23,9 +23,7 @@ ini_set("display_errors", 1);
         <div class="container">
             <div class="row ">
                 <div class="col-md-12">
-                    <strong>컴퓨터정보통신공학11 김남진&nbsp;&nbsp;Email: </strong>jj4st13@gmail.com&nbsp;&nbsp;
-                    <strong>컴퓨터정보통신공학15 안정인&nbsp;&nbsp;Email: </strong>ji5489@gmail.com
-                    <br>
+                    Copyright &copy; 2015 김남진,안정인 All rights reserved.
                 </div>
             </div>
         </div>
