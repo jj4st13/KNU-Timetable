@@ -9,8 +9,7 @@
     require_once "../lib/connect.php";
 
     //모든 정보가 재대로 정의 되어 있는 지 확인!
-    if(!check_regist_form($_POST['userid'], $_POST['userpw'], $_POST['userpw2'], $_POST['username'], $_POST['email']), $_POST['usercomment']){
-        echo "<script>alert('회원가입 폼을 정확히 채워주세요.');history.back();</script>";
+    if(!check_regist_form($_POST['userid'], $_POST['userpw'], $_POST['userpw2'], $_POST['username'], $_POST['email'], $_POST['comment'])){
         exit;
     }
 
@@ -31,7 +30,7 @@
         $email = $_POST['email'];
         $grade = $_POST['usergrade'];
         $major = $_POST['major'];
-        $comment = $_POST['usercomment'];
+        $comment = $_POST['comment'];
 
         //입력받은 아이디가 존재하는지 체크하기 위해 데이터베이스에서 id를 가져옴
         $db->query = "SELECT id FROM users WHERE id='$id'";
@@ -45,15 +44,15 @@
             //64자리의 무작위 문자열을 생성한다.
             //이 64자리의 임의의 수가 바로 토큰으로 로그인 대조에 사용할 키 값.
             $key = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789^/';
-            for($i=0;$i<=63;$i++)
+            for($i=0;$i<64;$i++)
                 $token .= $key[rand(0,63)];
 
             //아이디와 비밀번호 및 기타 정보들을 DB에 등록한다.
-            $db->query = "SELECT INTO users (id, password, token, name, email, grade, major, comment) VALUE ('$id', '$pw', '$token', '$name', '$email', '$grade', '$major', $comment')";
+            $db->query = "INSERT INTO users (id, password, token, name, email, grade, major, comment) VALUE ('$id', '$pw', '$token', '$name', '$email', '$grade', '$major', '$comment')";
             $db->DBQ();
 
             if(!$db->result)    //회원가입 실패시
-                echo "<script>alert('회원가입에 실패하였습니다.');history.back();</script>";
+                echo "<script>alert('회원가입에 실패하였습니다. 관리자에게 문의하세요.');history.back();</script>";
 
             else{    //회원가입 성공시
                 echo "<script>alert('회원가입 되었습니다. 메인화면으로 이동합니다.');</script>";
