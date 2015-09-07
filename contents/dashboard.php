@@ -7,30 +7,30 @@
   관라지가 나중에 알아서 수정
 */
 ?>
-<div class="content-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h4 class="page-head-line">Dashboard</h4>
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 class="page-head-line">Dashboard</h4>
 
+                </div>
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <!-- Uchat SECTION START-->
-                <script src='//uchat.co.kr/uchat.php' charset='UTF-8'></script>
-                <script type='text/javascript'>
-                    u_chat({
-                    room:'KNUtimetable'
-                    , skin:'1'
-                    , chat_record:true
-                    , width:'230'
-                    , height:'500'
-                    });
-                </script>
-                <!-- Uchat SECTION END-->
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Uchat SECTION START-->
+                    <script src='//uchat.co.kr/uchat.php' charset='UTF-8'></script>
+                    <script type='text/javascript'>
+                        u_chat({
+                            room: 'KNUtimetable',
+                            skin: '1',
+                            chat_record: true,
+                            width: '230',
+                            height: '500'
+                        });
+                    </script>
+                    <!-- Uchat SECTION END-->
+                </div>
             </div>
         </div>
     </div>
-</div>

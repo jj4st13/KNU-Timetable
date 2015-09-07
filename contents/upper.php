@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<!-- HEADER START-->
+    <!-- HEADER START-->
     <header>
         <div class="container">
             <div class="row">
@@ -84,15 +84,15 @@
                                     </div>
                                 </div>
                                 <hr/>
-                                    <h5><strong>한줄소개 : </strong></h5>
-                                    <?php
+                                <h5><strong>한줄소개 : </strong></h5>
+                                <?php
                                     if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo $_SESSION['desc'];
                                     ?>
-                                <hr/>
+                                    <hr/>
                                     <!-- 풀 프로파일은 아직 보류
                                 <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp;
                                 -->
-                                <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
+                                    <?php if(isset($_SESSION['username']) && isset($_SESSION['userid'])) echo "<a href=\"login/logout.php\" class=\"btn btn-danger btn-sm\">Logout</a>"; else echo "<a data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\" class=\"btn btn-info btn-sm\">Login</a>";?>
                             </div>
                         </li>
                     </ul>
@@ -112,11 +112,11 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.php?pageid=dashboard" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="dashboard" ) echo "class=\"menu-top-active\""; if(!isset($_GET[ "pageid"])) echo "class=\"menu-top-active\""; ?>>Dashboard</a></li>
-                            <li><a href="index.php?pageid=table" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table" ) echo "class=\"menu-top-active\""; ?>>Time-table</a></li>
-                            <li><a href="index.php?pageid=board" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board" ) echo "class=\"menu-top-active\""; ?>>Free board</a></li>
-                            <li><a href="index.php?pageid=qna" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna" ) echo "class=\"menu-top-active\""; ?>>QnA</a></li>
-                            <li><a type="button" <?php if(!isset($_SESSION['userid'])) echo "data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\""; else echo "href=\"login/logout.php\""; ?>><?php if(!isset($_SESSION['userid'])) echo "login"; else echo "logout"?></a></li>
+                            <li><a href="index.php?pageid=dashboard" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="dashboard" ) echo "class=\"menu-top-active\ ""; if(!isset($_GET[ "pageid"])) echo "class=\"menu-top-active\ ""; ?>>Dashboard</a></li>
+                            <li><a href="index.php?pageid=table" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table" ) echo "class=\"menu-top-active\ ""; ?>>Time-table</a></li>
+                            <li><a href="index.php?pageid=board" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board" ) echo "class=\"menu-top-active\ ""; ?>>Free board</a></li>
+                            <li><a href="index.php?pageid=qna" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna" ) echo "class=\"menu-top-active\ ""; ?>>QnA</a></li>
+                            <li><a type="button" <?php if(!isset($_SESSION[ 'userid'])) echo "data-toggle=\"modal\ " href=\"#\ " data-target=\"#modal_login\ ""; else echo "href=\"login/logout.php\ ""; ?>><?php if(!isset($_SESSION['userid'])) echo "login"; else echo "logout"?></a></li>
                         </ul>
                     </div>
                 </div>
