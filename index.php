@@ -5,7 +5,6 @@ ini_set("display_errors", 1);
         session_start();
     }
 
-    //include_once "./lib/connect.php";       //db연결
     require_once "./contents/upper.php";    //상단
     if(!isset($_GET[ "pageid"]) || $_GET[ "pageid"]=="dashboard")
         require_once "./contents/dashboard.php";
