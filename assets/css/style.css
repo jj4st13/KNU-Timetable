@@ -23,7 +23,7 @@
 /* FREE GOOGLE FONT */
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'NanumGothic', 'Malgun Gothic', 'Roboto', sans-serif;
     line-height: 30px;
 }
 
@@ -302,13 +302,6 @@ footer a:hover {
 li a:hover {
     text-decoration: none;
     color: #000;
-}
-
-/* 강의목록표 */
-
-.td_size {
-    width: 2000px;
-    max-width: 2000px;
 }
 
 /* SOCIAL BUTTONS */
