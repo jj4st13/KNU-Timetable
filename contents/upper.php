@@ -112,11 +112,12 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a href="index.php?pageid=dashboard" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="dashboard" ) echo "class=\"menu-top-active\ ""; if(!isset($_GET[ "pageid"])) echo "class=\"menu-top-active\ ""; ?>>Dashboard</a></li>
-                            <li><a href="index.php?pageid=table" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table" ) echo "class=\"menu-top-active\ ""; ?>>Time-table</a></li>
-                            <li><a href="index.php?pageid=board" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board" ) echo "class=\"menu-top-active\ ""; ?>>Free board</a></li>
-                            <li><a href="index.php?pageid=qna" <?php if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna" ) echo "class=\"menu-top-active\ ""; ?>>QnA</a></li>
-                            <li><a type="button" <?php if(!isset($_SESSION[ 'userid'])) echo "data-toggle=\"modal\ " href=\"#\ " data-target=\"#modal_login\ ""; else echo "href=\"login/logout.php\ ""; ?>><?php if(!isset($_SESSION['userid'])) echo "login"; else echo "logout"?></a></li>
+                            <li>
+                                <a href="index.php?pageid=dashboard" <?php if(isset($_GET["pageid"]) && $_GET["pageid"]=="dashboard") echo "class=\"menu-top-active\""; if(!isset($_GET["pageid"])) echo "class=\"menu-top-active\""; ?>>Dashboard</a></li>
+                            <li><a href="index.php?pageid=table" <?php if(isset($_GET["pageid"]) && $_GET["pageid"]=="table") echo "class=\"menu-top-active\""; ?>>Time-table</a></li>
+                            <li><a href="index.php?pageid=board" <?php if(isset($_GET["pageid"]) && $_GET["pageid"]=="board") echo "class=\"menu-top-active\""; ?>>Free board</a></li>
+                            <li><a href="index.php?pageid=qna" <?php if(isset($_GET[ "pageid"]) && $_GET["pageid"]=="qna") echo "class=\"menu-top-active\""; ?>>QnA</a></li>
+                            <li><a type="button " <?php if(!isset($_SESSION[ 'userid'])) echo "data-toggle=\"modal\" href=\"#\" data-target=\"#modal_login\""; else echo "href=\"login/logout.php\""; ?>><?php if(!isset($_SESSION['userid'])) echo "login"; else echo "logout"; ?></a></li>
                         </ul>
                     </div>
                 </div>
