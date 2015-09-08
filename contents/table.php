@@ -61,16 +61,33 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th>1교시
-                                            <br /><b>09:00~10:15</b>
-                                            <br />09:00~09:50</th>
-                                    </tr>
-                                    <tr>
-                                        <th>2교시
-                                            <br /><b>10:30~11:45</b>
-                                            <br />10:00~10:50</th>
-                                    </tr>
+                                    <?php
+
+$num = 1;
+$i = 0;
+$tag1 = "                                    ";
+$tag2 = "    ";
+$tag3 = $tag1 . "<tr>\n" . $tag1 . $tag2 . "<th>\n" . $tag1 . $tag2 . $tag2;
+$tag4 = "\n" . $tag1 . $tag2 . "</th>\n" . $tag1 . $tag2 . "<th>\n" . $tag1 . $tag2 . $tag2;
+$tag5 = "\n" . $tag1 . $tag2 . $tag2 . "</th>\n";
+$tag6 = $tag1 . $tag2 . "</tr>\n";
+
+while($num <= 10) {
+    echo $tag3 . $num . "교시"; // tag && 교시
+
+    /**
+     * 아직은 아무것도 넣지 않음.
+     * 추후 개인 시간표 구현 시 사용
+     */
+    for($i = 0; $i < 5; $i++) {
+        echo $tag4 . "" . $tag5;
+    }
+
+    echo $tag6; // end
+    $num++;
+}
+
+?>
 
                                 </tbody>
                             </table>
