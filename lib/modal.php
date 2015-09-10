@@ -9,17 +9,25 @@
             </div>
 
             <div class="modal-body">
-                <form method='post' action='../login/login.php'>
-                    <div class="form-group">
-                        <label for="user_id">user ID</label>
-                        <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
+                <form class="form-horizontal" method='post' action='../login/login.php'>
+                    <div class="">
+                        <div class="form-group">
+                            <label for="userid" class="col-sm-2 control-label">user ID</label>
+                            <div class="col-sm-5">
+                                <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="userpw" class="col-sm-2 control-label">Password</label>
+                            <div class="col-sm-5">
+                                <input type="password" name="userpw" class="form-control" id="userpw" placeholder="Password" />
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="userpw" class="form-control" id="userpw" placeholder="Password" />
+                    <div class="form-group col-sm-3">
+                        <button type="submit" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Login</button>
+                        <button type="button" data-toggle="modal" data-target="#modal_register" class="btn btn-success btn-block"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;Sign up</button>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block"><i class="glyphicon glyphicon-log-in"></i>&nbsp;&nbsp;Login</button>
-                    <button type="button" data-toggle="modal" data-target="#modal_register" class="btn btn-success btn-block"><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;Sign up</button>
                 </form>
             </div>
 
@@ -47,27 +55,37 @@
                 <h4 class="modal-title" id="myModalLabel">회원가입</h4>
             </div>
 
-            <form method='post' action='../login/registerHandler.php'>
+            <form class="form-horizontal" method='post' action='../login/registerHandler.php'>
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="user_id">아이디</label>
-                        <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
+                        <label for="userid" class="col-sm-2 control-label">아이디</label>
+                        <div class="col-sm-5">
+                            <input type="id" name="userid" class="form-control" id="userid" placeholder="User ID" />
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="password">비밀번호</label>
-                        <input type="password" name="userpw" class="form-control" id="userpw" placeholder="예: 4~20자리의 숫자,영대/소문자 및 특수기호" />
+                        <label for="userpw" class="col-sm-2 control-label">비밀번호</label>
+                        <div class="col-sm-5">
+                            <input type="password" name="userpw" class="form-control" id="userpw" placeholder="예: 4~20자리의 숫자,영대/소문자 및 특수기호" />
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="password">다시 입력</label>
-                        <input type="password" name="userpw2" class="form-control" id="userpw2" placeholder="비밀번호 다시 입력" />
+                        <label for="userpw2" class="col-sm-2 control-label">다시 입력</label>
+                        <div class="col-sm-5">
+                            <input type="password" name="userpw2" class="form-control" id="userpw2" placeholder="비밀번호 다시 입력" />
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="name">이름</label>
-                        <input type="text" name="username" class="form-control" id="username" placeholder="예: 홍길동" />
+                        <label for="username" class="col-sm-2 control-label">이름</label>
+                        <div class="col-sm-5">
+                            <input type="text" name="username" class="form-control" id="username" placeholder="예: 홍길동" />
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" class="form-control" id="email" placeholder="email@Email.com" />
+                        <label for="email" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-5">
+                            <input type="email" name="email" class="form-control" id="email" placeholder="email@Email.com" />
+                        </div>
                     </div>
                     <div class="form-group form-inline">
                         <div class="input-group">
@@ -88,7 +106,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="user_id">자기소개</label>
+                        <label for="comment">자기소개</label>
                         <textarea class="form-control" name="comment" id="usercomment" rows="2" placeholder="예: 안녕하세요. 홍길동입니다."></textarea>
                     </div>
                 </div>
