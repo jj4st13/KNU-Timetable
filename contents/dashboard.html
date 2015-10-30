@@ -1,0 +1,38 @@
+<!--
+  채팅프로그램: uchat
+  uchat http://http://uchat.co.kr/
+  id = knu
+  password = namjin13
+  관라지가 나중에 알아서 수정
+
+  Responsive Image (이미지 크기 자동조절 클래스)
+  http://www.w3schools.com/bootstrap/bootstrap_images.asp
+-->
+<div class="content-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="page-head-line">대시보드</h4>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-9">
+				<img class="img-responsive" src="assets/img/timetable.jpg" alt="IT대 시간표">
+			</div>
+			<div class="col-md-3">
+				<!-- Uchat SECTION START-->
+					<script src='//uchat.co.kr/uchat.php' charset='UTF-8'></script>
+					<script type='text/javascript'>
+						u_chat({
+							room: 'KNUtimetable',
+							skin: '1',
+							chat_record: true,
+							width: '230',
+							height: '500'
+						});
+					</script>
+					<!-- Uchat SECTION END-->
+			</div>
+		</div>
+	</div>
+</div>

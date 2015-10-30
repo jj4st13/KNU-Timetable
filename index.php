@@ -1,39 +1,40 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-    if(!isset($_SESSION)){
-        session_start();
-    }
 
-    require_once "contents/upper.php";    //상단
-    if(!isset($_GET[ "pageid"]) || $_GET[ "pageid"]=="dashboard")
-        require_once "contents/dashboard.php";
-    else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="table")
-        require_once "contents/table.php";
-    else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="board")
-        require_once "contents/board.php";
-    else if(isset($_GET[ "pageid"]) && $_GET[ "pageid"]=="qna")
-        require_once "contents/qna.php";
-    require_once "lib/modal.php";         // 모달 로그인
+    // 각 페이지별 파일 위치
+    $header = "contents/header.php";
+    $footer = "contents/footer.html";           // 미구현 상태
+    $modal = "lib/modal.php";
+
+    $dashboard = "contents/dashboard.html";     // 미구현 상태
+    $table = "contents/table.php";
+    $board = "contents/board.html";             // 미구현 상태
+    $qna = "contents/qna.html";                 // 미구현 상태
+
+	// 에러 발생시 리포트(반환)
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
+
+	// 세션 시작
+	if(!isset($_SESSION))
+		session_start();
+
+	// 상단 페이지 로드 (Header)
+	require_once $header;
+
+	// 각 명시된 위치에 맞는 페이지 로드
+	if(!isset($_GET["pageid"]) || $_GET["pageid"]=="dashboard")
+		require_once $dashboard;
+	else if($_GET["pageid"]=="table")
+		require_once $table;
+	else if($_GET["pageid"]=="board")
+		require_once $board;
+	else if($_GET["pageid"]=="qna")
+		require_once $qna;
+
+	// 모달 로그인 페이지 로드
+	require_once $modal;
+
+	// 하단 페이지 로드 (Footer)
+	require_once $footer;
+
 ?>
-
-    <!-- FOOTER SECTION START-->
-    <footer>
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-12">
-                    Copyright &copy; 2015 김남진,안정인 All rights reserved.
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- FOOTER SECTION END-->
-
-
-
-    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    </body>
-</html>
