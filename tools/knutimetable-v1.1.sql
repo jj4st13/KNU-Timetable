@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.0.2
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- 생성 시간: 15-10-02 07:08
+-- Host: localhost
+-- 생성 시간: 15-10-30 15:25
 -- 서버 버전: 5.6.26
 -- PHP 버전: 5.6.12
 
@@ -26,11 +26,11 @@ SET time_zone = "+00:00";
 -- 테이블 구조 `knu_college_list`
 --
 
-CREATE TABLE IF NOT EXISTS `knu_college_list` (
+CREATE TABLE `knu_college_list` (
   `num` int(11) NOT NULL,
   `depart` varchar(20) DEFAULT NULL,
   `major` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 테이블의 덤프 데이터 `knu_college_list`
@@ -177,7 +177,7 @@ INSERT INTO `knu_college_list` (`num`, `depart`, `major`) VALUES
 -- 테이블 구조 `knu_lecture_list`
 --
 
-CREATE TABLE IF NOT EXISTS `knu_lecture_list` (
+CREATE TABLE `knu_lecture_list` (
   `num` int(11) NOT NULL,
   `type` varchar(10) DEFAULT NULL,
   `field` varchar(50) DEFAULT NULL,
@@ -195,7 +195,7 @@ CREATE TABLE IF NOT EXISTS `knu_lecture_list` (
   `lecRoom` text,
   `note` text,
   `isEng` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3296 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- 테이블의 덤프 데이터 `knu_lecture_list`
@@ -3513,10 +3513,10 @@ INSERT INTO `knu_lecture_list` (`num`, `type`, `field`, `code`, `classcode`, `le
 -- 테이블 구조 `knu_users_list`
 --
 
-CREATE TABLE IF NOT EXISTS `knu_users_list` (
+CREATE TABLE `knu_users_list` (
   `id` varchar(20) DEFAULT NULL,
   `password` binary(60) DEFAULT NULL,
-  `token` binary(64) DEFAULT NULL,
+  `token` char(64) DEFAULT NULL,
   `name` varchar(20) DEFAULT NULL,
   `email` text,
   `grade` int(11) DEFAULT NULL,
@@ -3541,6 +3541,12 @@ ALTER TABLE `knu_lecture_list`
   ADD PRIMARY KEY (`num`);
 
 --
+-- 테이블의 인덱스 `knu_users_list`
+--
+ALTER TABLE `knu_users_list`
+  ADD UNIQUE KEY `id` (`id`);
+
+--
 -- 덤프된 테이블의 AUTO_INCREMENT
 --
 
@@ -3548,12 +3554,12 @@ ALTER TABLE `knu_lecture_list`
 -- 테이블의 AUTO_INCREMENT `knu_college_list`
 --
 ALTER TABLE `knu_college_list`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=134;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=134;
 --
 -- 테이블의 AUTO_INCREMENT `knu_lecture_list`
 --
 ALTER TABLE `knu_lecture_list`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3296;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3296;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
